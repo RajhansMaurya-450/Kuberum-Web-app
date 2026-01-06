@@ -1,9 +1,13 @@
 import React from 'react';
 function OpenAccount() {
     return ( 
-        <h1>
-            OpenAccount
-        </h1>
+          <div className="container p-5 mb-5">
+        <div className="row text-center">
+            <h1> Open a Kuberum Account</h1>
+            <p>Modern platforms and apps, ₹0 investment,  and flat ₹20 intraday and F&O trades.</p>
+            <button className="p-2 btn btn-primary fs-5 mb-5" style={{width:"15%",margin:"0 auto"}}>Signup Now</button>
+        </div>
+      </div>
      );
 }
 
