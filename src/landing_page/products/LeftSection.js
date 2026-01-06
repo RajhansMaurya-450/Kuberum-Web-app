@@ -13,10 +13,10 @@ function LeftSection({imagesrc, title, description, trydemo, learnmore, Googlepl
           <a href=''>{trydemo}</a>
           <a href=''>{learnmore}</a>
           <a href=''>{Googleplay}
-            <img src='images/googlePlayBadge.svg'alt='playstore'></img>
+            <img src='images/googlePlayBadge.svg'alt='playstore'></img>// googleplay_logo
           </a>
           <a href=''>{Applestore}
-            <img src='images/appstoreBadge.svg' alt='Applestore'></img>
+            <img src='images/appstoreBadge.svg' alt='Applestore'></img> //appstore_logo
           </a>
         </div>
       </div>
