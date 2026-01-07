@@ -16,7 +16,7 @@ function Universe() {
         </div>
         <div className="col-4"><img src='images/tijori.svg' alt='zerodhafundhouse logo'style={{width:"20%"}}></img>
         <img src='images/dittoLogo.png' alt='zerodhafundhouse logo'style={{width:"20%"}}></img>
-        </div>
+        </div> 
       </div>
     </div>
   )
