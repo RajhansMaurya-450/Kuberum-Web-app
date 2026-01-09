@@ -4,7 +4,7 @@ function CreateTicket() {
   return (
     <div className="container">
       <div className="row">
-        <h3 className="mb-5">To create a  ticket, select a relevant topic</h3>
+        <h3 className="mt-5 p-5 mb-5">To create a  ticket, select a relevant topic</h3>
       </div>
       <div className="row">
         <div className="col-4">
