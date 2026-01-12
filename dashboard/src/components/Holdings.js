@@ -1,4 +1,5 @@
 import React from "react";
+import { holdings } from "../data/data.js";
 
 const Holdings = () => {
   return (
@@ -17,6 +18,26 @@ const Holdings = () => {
             <th>Net chg.</th>
             <th>Day chg.</th>
           </tr>
+          {holdings.map((stock, index) => {
+            const currentVal = stock.price * stock.qty;
+            const isProfit = currentVal - stock.avg * stock.qty >= 0.0;
+            const profitClass = isProfit ? "profit" : "loss";
+            const dayClass = stock.isLoss ? "loss" : "profit";
+
+            return (
+              <tr>
+                <td>{stock.name}</td>
+                <td>{stock.qty}.</td>
+                <td>{stock.avg.toFixed(2)}</td>
+                <td>{stock.price.toFixed(2)}</td>
+                <td>{currentVal.toFixed(2)}</td>
+                <td className={profitClass}>{(currentVal - stock.avg * stock.qty).toFixed(2)}</td>
+                <td className={profitClass}>{stock.net}</td>
+                <td className={dayClass }>{dayClass }</td>
+              </tr>
+            )
+
+          })}
         </table>
       </div>
 
