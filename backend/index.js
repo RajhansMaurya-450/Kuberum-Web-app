@@ -4,8 +4,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionModel } = require("./model/PositionModel");
+const OrdersModel = require("./model/OrdersModel");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+// const { default: Orders } = require("../dashboard/src/components/Orders");
+
 
 
 const PORT = process.env.PORT || 3002;
@@ -14,6 +17,8 @@ const url = process.env.MONGO_URL;
 const app = express();
 app.use (cors());
 app.use (bodyParser.json());
+
+
 
 app.listen(PORT, () => {
     console.log("App started");
@@ -203,3 +208,17 @@ app.get("/allposition", async(req,res) =>{   //brings data from DB and holds in 
     let allposition = await PositionModel.find({});
     res.json(allposition);
 });
+
+app.post("/newOrder",async(req,res) => {
+    let newOrder = new OrdersModel({
+        name: req.body.name,
+        qty: req.body.qty,
+        price: req.body.price,
+        mode: req.body.node,
+    });
+
+    newOrder.save();
+
+    res.send("Order Saved!");
+});
+
